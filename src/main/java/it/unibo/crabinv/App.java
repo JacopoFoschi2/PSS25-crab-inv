@@ -29,9 +29,12 @@ public final class App extends Application {
     public void start(final Stage mainStage) throws IOException {
         //Tweaks the initial config of the stage
         mainStage.initStyle(StageStyle.UNDECORATED);
-        mainStage.setMaximized(true);
         //The bounds of the screen
         final Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        mainStage.setX(bounds.getMinX());
+        mainStage.setY(bounds.getMinY());
+        mainStage.setWidth(bounds.getWidth());
+        mainStage.setHeight(bounds.getHeight());
         final Scene mainScene;
         final StackPane root = new StackPane();
         mainScene = new Scene(root);
